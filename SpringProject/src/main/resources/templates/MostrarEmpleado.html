@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Empleado ' + ${empleado.nombre}">"Empleado"</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+</head>
+<body>
+<body>
+<h1 class="col-12 text-center mt-3">Reporte del empleado</h1>
+<div class="w-50 mx-auto d-flex flex-column">
+    <label for="nombre">Nombre</label>
+    <input type="text" th:value="${empleado.nombre}" class="form-control" id="nombre" readonly/>
+    <label for="apellido">Apellido</label>
+    <input type="text" th:value="${empleado.apellido}" class="form-control" id="apellido" readonly/>
+    <label for="edad">Edad</label>
+    <input type="text" th:value="${empleado.edad}" class="form-control" id="edad" readonly/>
+    <label for="email">E-mail</label>
+    <input type="text" th:value="${empleado.email}" class="form-control" id="email"  readonly/>
+    <label for="telefono">Telefono</label>
+    <input type="text" th:value="${empleado.telefono}" class="form-control" id="telefono" readonly/>
+    <label for="genero">Sexo</label>
+    <input type="text" th:value="${empleado.sexo}" class="form-control" id="genero" readonly/>
+    <label for="rol">Rol:</label>
+    <input type="text" th:value="${empleado.rol.role}" class="form-control" id="rol" readonly/>
+    <label for="direccion">Dirección</label>
+    <input type="text" th:value="${empleado.direccion}" class="form-control" id="direccion" readonly/>
+    <a th:href="@{/empleados/edit/{id}(id=${empleado.id})}" class="btn btn-primary mt-5">
+        Editar Datos Del Empleado
+    </a>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" defer></script>
+</body>
+</html>
